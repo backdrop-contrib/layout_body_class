@@ -1,0 +1,5 @@
+name = "Layout Body Class"
+description = "Adds the layout machine name as a class to the body tag."
+type = module
+backdrop = 1.x
+dependencies[] = layout
