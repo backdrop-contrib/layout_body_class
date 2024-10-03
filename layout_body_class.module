@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Implements hook_preprocess_html().
+ * Implements hook_preprocess_page().
  */
-function layout_body_class_preprocess_html(&$variables) {
+function layout_body_class_preprocess_page(&$variables) {
   // Get the current layout.
-  $layout = layout_get_layout();
+  $layout = layout_get_layout_by_path();
   
   // Check if a layout is active.
-  if (!empty($layout['name'])) {
+  if (!empty($layout->name)) {
     // Add the layout machine name as a class to the body tag.
-    $variables['classes_array'][] = 'layout-' . drupal_clean_css_identifier($layout['name']);
+    $variables['classes'][] = 'layout-' . drupal_clean_css_identifier($layout->name);
   }
 }
